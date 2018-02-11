@@ -1,9 +1,5 @@
-/* binary_search
- * search for a given element in the array/vector using binary_search
- * Author@raghu
- */
-
-/* binary search function to iteratively search for an element in an array/vector
+/* Author@raghu
+ * binary search function to iteratively search for an element in an array/vector
  * PRE-CONDN: array/vector must be sorted
  * RETURNS: postion of element if found, else return -1 
  */
