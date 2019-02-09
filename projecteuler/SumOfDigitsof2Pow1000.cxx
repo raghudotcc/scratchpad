@@ -1,23 +1,12 @@
-/*
-	This program computes 2^1000 and sum of digits of the result
-	@author Raghu
-*/
+/* This program computes 2^1000 and sum of digits of the result
+ * author@Raghu
+ */
 #include <vector>
 #include <string>
 #include <algorithm>
 #include <cmath>
 #include <iostream>
 #include <numeric>
-
-template <typename T>
-std::ostream& operator<<(std::ostream& out, const std::vector<T> &out_vector)
-{
-	auto vector_iterator = out_vector.begin();
-	for (; vector_iterator != out_vector.end(); ++vector_iterator) {
-		out << (*vector_iterator);
-	}
-	return out;
-}
 
 void multiply(std::vector<unsigned long int>& prod, std::vector<unsigned long int> twoPow25)
 {
@@ -42,18 +31,12 @@ void multiply(std::vector<unsigned long int>& prod, std::vector<unsigned long in
 			zeroPrepCnt = resVec1.size();
 		}
 		resVec.push_back(resVec1);
-		//std::cout << resVec1 << std::endl;
 		resVec1.clear();
-		// zeroAppCnt = 0;
 		carry = 0;
 		prodPlusCarry = 1;
 	}
-
-	
-	
 	for (auto& rv : resVec) {
 		rv.insert(rv.end(), zeroPrepCnt - rv.size(), 0);
-		// std::cout << rv << std::endl;
 	}
 
 	prod.clear();
@@ -69,7 +52,7 @@ void multiply(std::vector<unsigned long int>& prod, std::vector<unsigned long in
 		carry = sum / 10;
 		sum = 0;
 	}
-	if (carry) {
+	if (carry) { 
 		prod.push_back(static_cast<unsigned long int>(carry));
 	}
 }
@@ -77,19 +60,10 @@ void multiply(std::vector<unsigned long int>& prod, std::vector<unsigned long in
 int main()
 {
 	std::vector<unsigned long int> twoPowerTwentyFive = { 2, 3, 4, 4, 5, 5, 3, 3 };
-
 	std::vector<unsigned long int> product = twoPowerTwentyFive;
-	//why 39 times - because product is already initialized to twoPowerTwentyFive
 	for (int i = 0; i < 39; i++) {
-		multiply(product, twoPowerTwentyFive);
+	  multiply(product, twoPowerTwentyFive);
 	}
-
-	// std::reverse(product.begin(), product.end());
-	for (auto p : product) {
-		std::cout << p;
-	} std::cout << std::endl;
-	
 	std::cout << std::accumulate(product.begin(), product.end(), 0) << std::endl;
-
 	return 0;
 }
