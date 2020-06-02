@@ -6,7 +6,7 @@ This is only useful if you are using my jekyll theme with notes-autocomplete fea
 
 This plugin allows you to autocomplete files as you type wiki-style links.
 
-For ex: if you had 6 files with title abc, adr, xyz, lmn, opq, rst; and you started type `[[`, this plugin will provide a autocomplete dropdown as you type `[[`. Not just that, this plugin also is context aware i.e., if you type `[[a` and then type d like this - `[[ad`, it will only show you `adr` in the dropdown.
+For ex: if you had 6 files with title abc, adr, xyz, lmn, opq, rst; and you started typing `[[`, this plugin will provide a autocomplete dropdown as you type `[[`. Not just that, this plugin also is context aware i.e., if you type `[[a` and then type d like this - `[[ad`, it will only show you `adr` in the dropdown.
 
 ## Requirement:
 
