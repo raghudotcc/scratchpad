@@ -23,4 +23,5 @@ Have a file called `autocomplete.txt` in your jekyll root directory with the fol
 {%- endfor -%}
 ```
 
-## And viola! It should start working magically.
+## And viola! It should start working magically (Screenshot below:)
+![](https://www.dropbox.com/s/z1sdamtwbhahug2/autocomplete.JPG?raw=1)
