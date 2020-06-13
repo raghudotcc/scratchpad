@@ -1,13 +1,11 @@
-## Research
+## Wikis on random research stuff that I've been doing
 ---
 
 [Natural Language Interface](nli.html)
+[Theory of Computation](toc.html)  
+[Category Theory](ct.html)
+[Compiler Design](cd.html)
+[Graphics Programming and Computational Geometry](gp.html)
 
-## Tinkerings
----
 
-1. Shortcut
-2. Note-complete for my jekyll theme
-3. Project Euler 
-4. Design Patterns
-5. Optimizations and other experiments that don't fit anywhere
+
