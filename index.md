@@ -8,3 +8,6 @@
 
 1. Shortcut
 2. Note-complete for my jekyll theme
+3. Project Euler 
+4. Design Patterns
+5. Optimizations and other experiments that don't fit anywhere
