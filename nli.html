@@ -175,6 +175,8 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/sq/streams/current-edit-tiddler-202418933</li>
+
 <li>$:/state/tab--2112689675</li>
 
 <li>$:/state/tab--959111941</li>
@@ -250,6 +252,8 @@ Error message and password prompt
 <li>Index/20200621141627485</li>
 
 <li>Index/20200621142315393</li>
+
+<li>Index/20200621143456410</li>
 
 <li>Prathyush</li>
 
@@ -11015,6 +11019,9 @@ Zhong,  V.,  Xiong,C.,  &amp;  Socher,  R.  (2017).  Seq2SQL:  Generating  Struc
 <div created="20200613132318441" modified="20200613133256758" title="$:/SiteTitle">
 <pre>Natural Language Interface</pre>
 </div>
+<div created="20200621143837440" modified="20200621143837440" title="$:/state/sq/streams/current-edit-tiddler-202418933">
+<pre>Index/20200621142315393</pre>
+</div>
 <div created="20200613134025157" modified="20200613134025157" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Advanced</pre>
 </div>
@@ -11030,7 +11037,7 @@ Zhong,  V.,  Xiong,C.,  &amp;  Socher,  R.  (2017).  Seq2SQL:  Generating  Struc
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200621141759672" list="Index" modified="20200621141759672" title="$:/StoryList">
+<div created="20200621141759672" list="Index" modified="20200621143837362" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -11278,7 +11285,7 @@ It automatically can take a new language as an input and tag noun, verb etc; and
 
 Okay, so it looks like the tokenization needs to be done by us and the tagging will be done by the tagging systems based on the configuration. </pre>
 </div>
-<div created="20200613133554999" modified="20200621141534780" parent="Index/20200613133318746" stream-list="Index/20200621141533369" stream-type="default" title="Index/20200613133554998">
+<div created="20200613133554999" modified="20200621143456412" parent="Index/20200613133318746" stream-list="Index/20200621141533369 Index/20200621143456410" stream-type="default" title="Index/20200613133554998">
 <pre>[[[External] Example of NLIDB|https://www.researchgate.net/publication/257318989_How_to_make_a_natural_language_interface_to_query_databases_accessible_to_everyone_An_example]]</pre>
 </div>
 <div created="20200613133629947" modified="20200613133630942" parent="Index/20200613133318746" stream-type="default" title="Index/20200613133629945">
@@ -11288,13 +11295,13 @@ Okay, so it looks like the tokenization needs to be done by us and the tagging w
 <pre>Use cases: Healthcare, Customer Support, Search Engines. &lt;br&gt;
 ''Note'': [[Prathyush]] wants to use it for querying a Networked Website. </pre>
 </div>
-<div created="20200621141533370" modified="20200621141534781" parent="Index/20200613133554998" stream-type="default" title="Index/20200621141533369">
-<pre></pre>
+<div created="20200621141533370" modified="20200621143452960" parent="Index/20200613133554998" stream-type="default" title="Index/20200621141533369">
+<pre>It seems that most of these systems have a fundamental requirement to annotate the entire corpora.</pre>
 </div>
 <div created="20200621141627485" modified="20200621142324508" parent="Index/20200613133318746" stream-list="Index/20200621142315393" stream-type="default" title="Index/20200621141627485">
 <pre>Some challenges include:</pre>
 </div>
-<div created="20200621142315396" modified="20200621142623175" parent="Index/20200621141627485" stream-type="default" title="Index/20200621142315393">
+<div created="20200621142315396" modified="20200621143835425" parent="Index/20200621141627485" stream-type="default" title="Index/20200621142315393">
 <pre>
 1. ''Modifier attachment'':    The request &quot;List all employees in the company with a driving licence&quot; is ambiguous unless you know that companies can't have driving licences.
 
@@ -11304,7 +11311,12 @@ Okay, so it looks like the tokenization needs to be done by us and the tagging w
 
 4. &quot;Speed and Efficiency&quot;
 
-5. Ask [[Prathyush]] if we want a generalized version or something like LUNAR/BASEBALL that is domain specific. It would be easy to get started with and also seems like would work for most of our use case. (''Note'': The thing to consider is how would we resolve the empty result issue on false negatives. See: [[Differential Query Pair]])</pre>
+5. Ask [[Prathyush]] if we want a generalized version or something like LUNAR/BASEBALL that is domain specific. It would be easy to get started with and also seems like would work for most of our use case. (''Note'': The thing to consider is how would we resolve the empty result issue on false negatives. 
+
+See: [[Differential Query Pair]], [[Clarification dialogs|Index/20200621143456410]])</pre>
+</div>
+<div created="20200621143456411" modified="20200621143726952" parent="Index/20200613133554998" stream-type="default" title="Index/20200621143456410">
+<pre>One interesting thing way to handle the linguistic insufficiency problem i.e., what do you do when there is a false negative (empty return) due to insufficient mapping of annotated queries is custom clarification dialogs and adding the clarified annotations to the database or the validation point.</pre>
 </div>
 <div created="20200613133749016" modified="20200613133756320" stream-list="Prathyush/20200613133749013" stream-type="default" title="Prathyush">
 <pre></pre>
