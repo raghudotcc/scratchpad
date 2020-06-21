@@ -147,6 +147,8 @@ Error message and password prompt
 
 <li>$:/config/EditorTypeMappings/text/vnd.tiddlywiki</li>
 
+<li>$:/config/WikiParserRules/Inline/wikilink</li>
+
 <li>$:/core</li>
 
 <li>$:/DefaultTiddlers</li>
@@ -254,6 +256,10 @@ Error message and password prompt
 <li>Index/20200621143456410</li>
 
 <li>Index/20200621144037628</li>
+
+<li>Index/20200621145913333</li>
+
+<li>Index/20200621145923687</li>
 
 <li>Prathyush</li>
 
@@ -422,6 +428,9 @@ Zhong,  V.,  Xiong,C.,  &amp;  Socher,  R.  (2017).  Seq2SQL:  Generating  Struc
 </div>
 <div created="20200613134034661" modified="20200613134038172" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki">
 <pre>comptext</pre>
+</div>
+<div created="20200621145957257" modified="20200621145957299" title="$:/config/WikiParserRules/Inline/wikilink">
+<pre>enable</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.22">
 <pre>{
@@ -11019,14 +11028,14 @@ Zhong,  V.,  Xiong,C.,  &amp;  Socher,  R.  (2017).  Seq2SQL:  Generating  Struc
 <div created="20200613132318441" modified="20200613133256758" title="$:/SiteTitle">
 <pre>Natural Language Interface</pre>
 </div>
-<div created="20200613134025157" modified="20200613134025157" title="$:/state/tab--2112689675">
-<pre>$:/core/ui/ControlPanel/Advanced</pre>
+<div created="20200613134025157" modified="20200621145952046" title="$:/state/tab--2112689675">
+<pre>$:/core/ui/ControlPanel/Basics</pre>
 </div>
-<div created="20200613134028399" modified="20200613134028399" title="$:/state/tab--959111941">
-<pre>$:/core/ui/ControlPanel/EditorTypes</pre>
+<div created="20200613134028399" modified="20200621145950734" title="$:/state/tab--959111941">
+<pre>$:/core/ui/ControlPanel/LoadedModules</pre>
 </div>
-<div created="20200613133935129" modified="20200621141801999" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Saving</pre>
+<div created="20200613133935129" modified="20200621145959008" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20200613133936169" modified="20200613133936169" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -11034,7 +11043,7 @@ Zhong,  V.,  Xiong,C.,  &amp;  Socher,  R.  (2017).  Seq2SQL:  Generating  Struc
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200621141759672" list="Index Index/20200621144037628" modified="20200621144440783" title="$:/StoryList">
+<div created="20200621141759672" list="Index" modified="20200621145946241" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -11282,11 +11291,11 @@ It automatically can take a new language as an input and tag noun, verb etc; and
 
 Okay, so it looks like the tokenization needs to be done by us and the tagging will be done by the tagging systems based on the configuration. </pre>
 </div>
-<div created="20200613133554999" modified="20200621144037631" parent="Index/20200613133318746" stream-list="Index/20200621141533369 Index/20200621143456410 Index/20200621144037628" stream-type="default" title="Index/20200613133554998">
+<div created="20200613133554999" modified="20200621145928782" parent="Index/20200613133318746" stream-list="Index/20200621141533369 Index/20200621143456410 Index/20200621144037628 Index/20200621145913333" stream-type="default" title="Index/20200613133554998">
 <pre>[[[External] Example of NLIDB|https://www.researchgate.net/publication/257318989_How_to_make_a_natural_language_interface_to_query_databases_accessible_to_everyone_An_example]]</pre>
 </div>
-<div created="20200613133629947" modified="20200613133630942" parent="Index/20200613133318746" stream-type="default" title="Index/20200613133629945">
-<pre>Examples: BERT, Wolfram Alpha, TIQI, nQuery, SQLnet, SQLizer, EEFCN, NALIR</pre>
+<div created="20200613133629947" modified="20200621144604679" parent="Index/20200613133318746" stream-type="default" title="Index/20200613133629945">
+<pre>Examples: BERT, Wolfram Alpha, TIQI, nQuery, SQLnet, SQLizer, EEFCN, NALIR, WASP, NALIX, AskMe, LUNAR etc</pre>
 </div>
 <div created="20200621141423384" modified="20200621141423384" parent="Index/20200613133318746" stream-type="default" title="Index/20200621141423383">
 <pre>Use cases: Healthcare, Customer Support, Search Engines. &lt;br&gt;
@@ -11315,10 +11324,18 @@ See: [[Differential Query Pair]], [[Clarification dialogs|Index/2020062114345641
 <div created="20200621143456411" modified="20200621143936264" parent="Index/20200613133554998" stream-type="default" title="Index/20200621143456410">
 <pre>One neat thing way to handle the linguistic insufficiency problem i.e., what do you do when there is a false negative (empty return) due to insufficient mapping of annotated queries is custom clarification dialogs and adding the clarified annotations to the database or the validation point.</pre>
 </div>
-<div created="20200621144037629" modified="20200621144525783" parent="Index/20200613133554998" stream-type="default" title="Index/20200621144037628">
+<div created="20200621144037629" modified="20200621144538310" parent="Index/20200613133554998" stream-type="default" title="Index/20200621144037628">
 <pre>1. Some other interesting ideas include highlight keywords from the annotated corpora when typing to reduce user error.
+
 2. Provide hints
+
 3. Autocomplete possibilities</pre>
+</div>
+<div created="20200621145913333" modified="20200621145928779" parent="Index/20200613133554998" stream-list="Index/20200621145923687" stream-type="default" title="Index/20200621145913333">
+<pre>{AskMe*} System</pre>
+</div>
+<div created="20200621145923690" modified="20200621145941759" parent="Index/20200621145913333" stream-type="default" title="Index/20200621145923687">
+<pre>[img[https://www.dropbox.com/s/fxfla27uzxc0trl/askme.png?raw=1]]</pre>
 </div>
 <div created="20200613133749016" modified="20200613133756320" stream-list="Prathyush/20200613133749013" stream-type="default" title="Prathyush">
 <pre></pre>
