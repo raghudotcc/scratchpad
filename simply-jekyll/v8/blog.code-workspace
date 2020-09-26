@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.fontSize": 12,
+		"editor.tabSize": 2,
+		"editor.fontFamily": " 'Courier New', monospace"
+	}
+}

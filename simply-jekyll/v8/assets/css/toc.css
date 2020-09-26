@@ -1,0 +1,28 @@
+---
+---
+
+#markdown-toc::before {
+    content: "Contents";
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#markdown-toc li {
+    margin-left: 1rem;
+    list-style: decimal;
+}
+
+#markdown-toc {
+    border: 1px solid #aaa;
+    padding: 1.5em;
+    list-style: decimal;
+    display: inline-block;
+}
+
+#markdown-toc a {
+    text-decoration: none;
+}
+
+#markdown-toc a:hover {
+    text-decoration: underline;
+}
