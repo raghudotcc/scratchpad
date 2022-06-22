@@ -1,0 +1,58 @@
+#!/usr/bin/python
+"""get the number of files of a given type in a given directory"""
+import argparse
+import os
+
+parser = argparse.ArgumentParser(description="get the number of files of a given type in a given directory")
+parser.add_argument("-d", "--directory", help="directory to search", required=True)
+parser.add_argument("-t", "--type", help="file type to search for", required=True)
+parser.add_argument("-r", "--recursive", help="recursive search", action="store_true")
+parser.add_argument("-v", "--verbose", help="verbose output", action="store_true")
+args = parser.parse_args()
+
+def INFO(msg):
+    print("[INFO] {}".format(msg))
+
+def Error(msg):
+    print("\033[31m[Error] {}\033[0m".format(msg))
+    exit(0)
+
+indent_level = 0
+
+# check if the directory exists
+if not os.path.exists(args.directory):
+    Error("Directory '{}' does not exist.".format(args.directory))
+
+def get_file_count(directory, file_type, recursive=False, verbose=False):
+    """get the number of files of a given type in a given directory"""
+    if recursive:
+        dirs = [os.path.join(directory, d) for d in os.listdir(directory) if os.path.isdir(os.path.join(directory, d))]
+    file_count = 0
+    # get the number of files of the given type in the given directory
+    for f in os.listdir(directory):
+        if os.path.isfile(os.path.join(directory, f)):
+            if f.endswith(file_type):
+                file_count += 1
+    if recursive:
+        # add a horizontal rule to separate the directories
+        global indent_level
+        indent_level += 2
+        for d in dirs:
+            fc = get_file_count(d, file_type, recursive, verbose)
+            if verbose:
+                print(indent_level * " " + "| \033[35mDir:\033[0m '.{}',\033[35mType:\033[0m '.{}', \033[33mCount:\033[0m {}".format(os.path.join(directory, d) , file_type, fc))
+            file_count += fc
+        indent_level -= 2
+    return file_count
+
+# remove the trailing slash if it exists
+directory = args.directory[:-1] if args.directory[-1] == "/" else args.directory
+INFO("Searching for files of type '{}' in directory '{}':".format(args.type, directory))
+file_type = args.type
+recursive = args.recursive
+verbose = args.verbose
+Recurse = "\033[32mTrue\033[0m" if recursive else "\033[31mFalse\033[0m"
+Verbose = "\033[32mTrue\033[0m" if verbose else "\033[31mFalse\033[0m"
+INFO("[\033[33mRecurse:\033[0m {}, \033[33mVerbose:\033[0m {}]".format(Recurse, Verbose))
+file_count = get_file_count(directory, file_type, recursive, verbose)
+print(indent_level * " " + "\033[35mDir:\033[0m '.{}',\033[35mType:\033[0m '.{}', \033[33mCount:\033[0m {}".format(directory, file_type, file_count))
